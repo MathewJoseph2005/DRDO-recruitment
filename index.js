@@ -75,7 +75,12 @@ app.get("/missilesAndStrategical", (req, res) => {
     "3. If you were part of a team designing a hybrid propulsion system for a reusable missile, how would you test and validate the system's performance?",
     "4. In the context of CFD simulations for missile aerodynamics, how would you validate your simulation results experimentally, and what real-world challenges might arise?"
   ];
-
+const interdisciplinaryKnowledge = [
+    "1. Missile propulsion systems interact with avionics and guidance systems. How would you ensure that propulsion, aerodynamics, and control systems work harmoniously in a missile design?",
+    "2. In developing a propulsion system, how would material science influence your design decisions regarding weight, heat resistance, and structural strength?",
+    "3. Discuss how electrical systems, such as sensors or actuators, could be integrated into a propulsion system to enhance performance. What challenges would arise from this integration?",
+    "4. In what ways can advancements in fuel chemistry (e.g., high-energy propellants) improve missile propulsion? How would you balance fuel selection with material and structural considerations?"
+  ];
   const innovation = [
     "1. With emerging technologies like electric propulsion or air-breathing engines, how would you apply these innovations to improve future missile systems' performance?",
     "2. Imagine you are tasked with improving the missile's stealth capabilities. How would you modify the propulsion and aerodynamic design to minimize its radar signature?",
@@ -90,45 +95,41 @@ app.get("/missilesAndStrategical", (req, res) => {
     "4. During a missile test flight, you notice that the propulsion system is overheating, causing structural damage. How would you diagnose the problem, and what corrective measures would you take?"
   ];
 
-  const Interdisciplinaryintegration = [
-    "1. Missile propulsion systems interact with avionics and guidance systems. How would you ensure that propulsion, aerodynamics, and control systems work harmoniously in a missile design?",
-    "2. In developing a propulsion system, how would material science influence your design decisions regarding weight, heat resistance, and structural strength?",
-    "3. Discuss how electrical systems, such as sensors or actuators, could be integrated into a propulsion system to enhance performance. What challenges would arise from this integration?",
-    "4. In what ways can advancements in fuel chemistry (e.g., high-energy propellants) improve missile propulsion? How would you balance fuel selection with material and structural considerations?"
-  ];
+  
 
   res.json({
-    question1: randamoizer(depthOfKnowledge),
+    question1: {
+      answer:randamoizer(depthOfKnowledge),},
     question2: randamoizer(practicalApplication),
-    question3: randamoizer(innovation),
-    question4: randamoizer(problemSolving),
-    question5: randamoizer(Interdisciplinaryintegration)
+    question3: randamoizer(interdisciplinaryKnowledge),
+    question4: randamoizer(innovation),
+    question5: randamoizer(problemSolving)
   });
 });
 
 app.get("/navalSystem", (req, res) => {
-  const DEPTHOFKNOWLEDGEINTHEFIELD = [
+  const depthOfKnowledge = [
     "1. Naval vessels operate under a variety of conditions, ranging from calm seas to rough, turbulent waters. How would you design a hull that maximizes hydrodynamic efficiency while maintaining structural integrity in harsh marine environments? Discuss the materials you would choose and the design trade-offs between speed, stability, and durability.",
     "2. Marine vessels face constant exposure to corrosive environments, leading to structural degradation. How would you incorporate corrosion management techniques into the design and material selection process for a naval ship? Discuss different approaches and their effectiveness, especially in minimizing long-term maintenance costs.",
     "3. Stability is a critical factor in naval vessel design, especially for ships operating in varied sea conditions. How would you design a naval vessel to optimize both stability and buoyancy? Discuss the influence of hull shape, ballast, and material selection on the vessel's stability.",
     "4. Modern naval vessels often require advanced hydrodynamic modeling to optimize their performance. How would you develop and validate a hydrodynamic model for a new class of naval vessel? Discuss the integration of computational fluid dynamics (CFD), physical testing, and real-world data in your approach."
   ];
 
-  const KEYWORDPRACTICALIMPLEMENTATION = [
+  const practicalApplication = [
     "1. Considering that naval vessels are exposed to harsh marine environments, how would you incorporate advanced corrosion prevention techniques into the design of a new naval vessel? Discuss specific materials, coatings, and design modifications that would enhance the vessel's lifespan and performance. How would you approach the implementation of these techniques in a cost-effective manner?",
     "2. Composite materials offer advantages such as reduced weight and improved corrosion resistance. However, their implementation in shipbuilding can present challenges. How would you address these challenges when incorporating composites into the design of a naval vessel? Discuss specific issues related to manufacturing, repair, and performance under marine conditions.",
     "3. Ocean engineering projects often have significant environmental impacts. How would you design a marine engineering project (e.g., a coastal defense system or marine energy installation) to minimize its environmental footprint? Discuss the interdisciplinary approaches you would use to address environmental concerns while achieving project goals.",
     "4. Coastal protection systems are crucial for mitigating the effects of erosion and flooding. How would you design a sustainable coastal protection system that integrates principles from ocean engineering, materials science, and environmental science? Discuss the design process, material choices, and environmental considerations."
   ];
 
-  const INTEGRATIONOFINTERDISCIPLINARYKNOWLEDGE = [
+  const interdisciplinaryKnowledge = [
     "1. With the increasing focus on sustainability, how would you design a marine energy system (e.g., wave energy converter, tidal turbine) that integrates principles from ocean engineering, materials science, and environmental science? Discuss how you would address energy efficiency, material durability, and environmental impact.",
     "2. Submersible vehicles operating at great depths face unique challenges such as extreme pressures and low temperatures. How would you design a submersible to withstand these conditions? Discuss the role of materials, structural design, and pressure-resistant technologies in ensuring the vehicle's performance and safety.",
     "3. Designing offshore platforms requires balancing structural integrity with environmental conditions such as waves, wind, and corrosion. How would you approach the design of an offshore platform to ensure stability and durability? Discuss the selection of materials, structural reinforcements, and design features to address these challenges.",
     "4. Marine equipment, such as turbines or pumps, undergoes significant wear and tear due to harsh conditions. How would you address lifecycle management to optimize the performance and longevity of this equipment? Discuss the role of materials science, maintenance strategies, and technological innovations."
   ];
 
-  const INNOVATION = [
+  const innovation = [
     "1. Autonomous underwater vehicles (AUVs) require materials that can withstand extreme pressure and corrosive environments while remaining lightweight and durable. How would you innovate new materials or material combinations to enhance the performance and reliability of AUVs? Consider aspects such as pressure resistance, corrosion resistance, and energy efficiency.",
     "2. Corrosion in marine infrastructure poses significant challenges. Propose an innovative solution or technology to prevent or mitigate corrosion in structures such as bridges or offshore platforms. Discuss how your solution integrates advancements in materials science, corrosion engineering, and structural design.",
     "3. With the increasing focus on sustainability in naval systems, how would you incorporate environmentally friendly materials and design principles into a new naval project? Discuss the impact of your choices on the vessel's performance, lifespan, and environmental footprint, especially considering your background in materials science.",
@@ -143,10 +144,10 @@ app.get("/navalSystem", (req, res) => {
   ];
 
   res.json({
-    question1: randamoizer(DEPTHOFKNOWLEDGEINTHEFIELD),
-    question2: randamoizer(KEYWORDPRACTICALIMPLEMENTATION),
-    question3: randamoizer(INTEGRATIONOFINTERDISCIPLINARYKNOWLEDGE),
-    question4: randamoizer(INNOVATION),
+    question1: randamoizer(depthOfKnowledge),
+    question2: randamoizer(practicalApplication),
+    question3: randamoizer(interdisciplinaryKnowledge),
+    question4: randamoizer(innovation),
     question5: randamoizer(Problemsolving)
   });
 });
